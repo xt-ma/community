@@ -1,0 +1,7 @@
+2022-02-25 17:31:11,887 INFO [main] c.n.c.LoggerTests [StartupInfoLogger.java:50] Starting LoggerTests on LAPTOP-4J7FSIIV with PID 3640 (started by xtma in D:\JavaCode\community)
+2022-02-25 17:31:11,893 INFO [main] c.n.c.LoggerTests [SpringApplication.java:675] No active profile set, falling back to default profiles: default
+2022-02-25 17:31:13,528 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-25 17:31:13,734 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:61] Adding welcome page template: index
+2022-02-25 17:31:13,928 INFO [main] c.n.c.LoggerTests [StartupInfoLogger.java:59] Started LoggerTests in 2.392 seconds (JVM running for 3.116)
+2022-02-25 17:31:14,310 INFO [main] c.n.c.LoggerTests [LoggerTests.java:23] info log
+2022-02-25 17:31:14,322 INFO [Thread-2] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
