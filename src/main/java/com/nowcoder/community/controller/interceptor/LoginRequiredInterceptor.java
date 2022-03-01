@@ -27,7 +27,10 @@ public class LoginRequiredInterceptor implements HandlerInterceptor {
             LoginRequired loginRequired = method.getAnnotation(LoginRequired.class);
             // 该操作需要登录 但当前没有登录
             if (loginRequired != null && hostHolder.getUser() == null) {
-                // 重定向到登录页面
+                // 重定向的方法：
+                // 1. 在拦截器中，通过response对象的sendRedirect方法实现重定向
+                // 2. 在Controller的方法里，通过response对象的sendRedirect方法实现重定向
+                // 3. 在Controller的方法里，通过返回以”redirect”开头的字符串实现重定向
                 response.sendRedirect(request.getContextPath() + "/login");
                 // 返回值为false DispatcherServlet 假定此拦截器已经处理了响应本身
                 return false;
