@@ -1,5 +1,6 @@
 package com.nowcoder.community.controller;
 
+import com.nowcoder.community.annotation.LoginRequired;
 import com.nowcoder.community.entity.User;
 import com.nowcoder.community.service.UserService;
 import com.nowcoder.community.util.CommunityUtil;
@@ -44,6 +45,7 @@ public class UserController {
     @Autowired
     private HostHolder hostHolder;
 
+    @LoginRequired
     @RequestMapping(path = "/setting", method = RequestMethod.GET)
     public String getSettingPage() {
         return "/site/setting";
@@ -52,6 +54,7 @@ public class UserController {
     // MultipartFile类主要是来实现以表单的形式进行文件上传功能
     // MultipartFile声明为一个数组，这样就能支持多文件传输
     @RequestMapping(path = "/upload", method = RequestMethod.POST)
+    @LoginRequired
     public String uploadHeader(MultipartFile headerImage, Model model) {
         if (headerImage == null) {
             model.addAttribute("error", "你还没有选择图片！");

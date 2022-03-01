@@ -3,6 +3,7 @@ package com.nowcoder.community.controller.interceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,6 +19,8 @@ public class AlphaInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         logger.debug("preHandle: " + handler.toString());
+        // 返回值为true 执行链继续下一个拦截器或处理程序本身
+        // 返回值为false DispatcherServlet 假定此拦截器已经处理了响应本身
         return true;
     }
 
