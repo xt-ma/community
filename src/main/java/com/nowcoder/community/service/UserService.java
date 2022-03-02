@@ -14,10 +14,7 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 @Service
 public class UserService implements CommunityConstant {
@@ -171,7 +168,7 @@ public class UserService implements CommunityConstant {
         return userMapper.updateHeader(userId, headerUrl);
     }
 
-    // 重置密码
+    // 忘记密码，重置密码
     public Map<String, Object> resetPassword(String email, String password) {
         Map<String, Object> map = new HashMap<>();
 
@@ -197,6 +194,42 @@ public class UserService implements CommunityConstant {
         userMapper.updatePassword(user.getId(), password);
 
         map.put("user", user);
+        return map;
+    }
+
+    // 修改密码
+    public Map<String, Object> updatePassword(int userId, String oldPassword, String newPassword) {
+        Map<String, Object> map = new HashMap<>();
+
+        // 空值处理
+        if (StringUtils.isBlank(oldPassword)) {
+            map.put("oldPasswordMsg", "原密码不能为空!");
+            return map;
+        }
+        if (StringUtils.isBlank(newPassword)) {
+            map.put("newPasswordMsg", "新密码不能为空!");
+            return map;
+        }
+
+        // 验证原始密码
+        User user = userMapper.selectById(userId);
+        oldPassword = CommunityUtil.md5(oldPassword + user.getSalt());
+        if (!user.getPassword().equals(oldPassword)) {
+            map.put("oldPasswordMsg", "原密码输入有误!");
+            return map;
+        }
+
+        // 更新密码
+        newPassword = CommunityUtil.md5(newPassword + user.getSalt());
+        userMapper.updatePassword(userId, newPassword);
+
+        List<String> list = new LinkedList<>();
+        String s1 = "1";
+        String s2 = "2";
+        String s3 = "3";
+        list.add(s1);
+        list.add(s2);
+
         return map;
     }
 }
