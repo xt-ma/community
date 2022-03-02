@@ -46,3 +46,15 @@
 2022-03-02 19:26:55,516 INFO [Thread-8] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
 2022-03-02 19:26:55,517 INFO [Thread-8] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
 2022-03-02 19:26:55,523 INFO [Thread-8] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2022-03-02 22:24:34,353 INFO [main] c.n.c.SensitiveTests [StartupInfoLogger.java:50] Starting SensitiveTests on LAPTOP-4J7FSIIV with PID 24684 (started by xtma in D:\JavaCode\community)
+2022-03-02 22:24:34,355 INFO [main] c.n.c.SensitiveTests [SpringApplication.java:675] No active profile set, falling back to default profiles: default
+2022-03-02 22:24:36,293 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-02 22:24:36,476 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:61] Adding welcome page template: index
+2022-03-02 22:24:36,704 INFO [main] c.n.c.SensitiveTests [StartupInfoLogger.java:59] Started SensitiveTests in 2.724 seconds (JVM running for 3.465)
+2022-03-02 22:24:37,137 INFO [Thread-2] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-03-02 22:47:37,905 INFO [main] c.n.c.SensitiveTests [StartupInfoLogger.java:50] Starting SensitiveTests on LAPTOP-4J7FSIIV with PID 4252 (started by xtma in D:\JavaCode\community)
+2022-03-02 22:47:37,907 INFO [main] c.n.c.SensitiveTests [SpringApplication.java:675] No active profile set, falling back to default profiles: default
+2022-03-02 22:47:39,846 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-02 22:47:40,009 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:61] Adding welcome page template: index
+2022-03-02 22:47:40,232 INFO [main] c.n.c.SensitiveTests [StartupInfoLogger.java:59] Started SensitiveTests in 2.718 seconds (JVM running for 3.426)
+2022-03-02 22:47:40,687 INFO [Thread-2] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
