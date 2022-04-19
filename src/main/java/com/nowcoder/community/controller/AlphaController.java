@@ -24,7 +24,7 @@ public class AlphaController {
     private AlphaService alphaService;
 
     @RequestMapping("/hello")
-    @ResponseBody
+    @ResponseBody//告知SpringMVC框架 不进行视图跳转 直接进行数据响应
     public String sayHello() {
         return "Hello Spring Boot.";
     }
@@ -38,9 +38,9 @@ public class AlphaController {
     @RequestMapping("/http")
     public void http(HttpServletRequest request, HttpServletResponse response) {
         // 获取请求数据
-        System.out.println(request.getMethod());
-        System.out.println(request.getServletPath());
-        Enumeration<String> enumeration = request.getHeaderNames();
+        System.out.println(request.getMethod());//get post
+        System.out.println(request.getServletPath());// 请求路径
+        Enumeration<String> enumeration = request.getHeaderNames();//请求头
         while (enumeration.hasMoreElements()) {
             String name = enumeration.nextElement();
             String value = request.getHeader(name);
