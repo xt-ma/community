@@ -65,7 +65,7 @@ public class DiscussPostService {
                         int offset = Integer.valueOf(params[0]);
                         int limit = Integer.valueOf(params[1]);
 
-                        // 二级缓存: Redis -> mysql
+                        // TODO：二级缓存: Redis -> mysql 自己加
 
                         logger.debug("load post list from DB.");
                         return discussPostMapper.selectDiscussPosts(0, offset, limit, 1);
@@ -79,6 +79,7 @@ public class DiscussPostService {
                     @Nullable
                     @Override
                     public Integer load(@NonNull Integer key) throws Exception {
+                        // TODO:二级缓存：redis->mysql
                         logger.debug("load post rows from DB.");
                         return discussPostMapper.selectDiscussPostRows(key);
                     }
@@ -86,6 +87,7 @@ public class DiscussPostService {
     }
 
     public List<DiscussPost> findDiscussPosts(int userId, int offset, int limit, int orderMode) {
+        // 只有热门帖子(访问首页时，不用传递userId，userId=0)
         if (userId == 0 && orderMode == 1) {
             return postListCache.get(offset + ":" + limit);
         }
@@ -95,6 +97,7 @@ public class DiscussPostService {
     }
 
     public int findDiscussPostRows(int userId) {
+        // 首页查询走缓存
         if (userId == 0) {
             return postRowsCache.get(userId);
         }
